@@ -7,7 +7,7 @@
 2. 下载项目源码，解压全部文件
 3. 在解压的文件夹里打开 `Powershell` 或者 `cmd` ，并执行下面的命令 
 ```
-pip install -r requirement.txt
+pip install -r requirement.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 4. 下载 Edge 浏览器的 WebDriver: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/  
 把下载完成的 `msedgedriver.exe` 放到此文件中.
