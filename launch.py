@@ -40,10 +40,11 @@ def read_setting(file_name):
         j = json.load(f)
     return j
 
-def read_config_setting(setting, serious = False):
+def read_config_setting(setting, serious = False, print_error = True):
     global config
     if setting not in config:
-        print_error("Config setting not found: " + setting, serious=serious, reboot=False)
+        if print_error:
+            print_error("Config setting not found: " + setting, serious=serious, reboot=False)
         return 0
     return config[setting]
 
@@ -53,9 +54,16 @@ def get_user_cookie(login_id, password):
     session = requests.session()
     
     # try to get login_url in 5 times
+    if read_config_setting("proxy", print_error=False) == 0:
+        proxy = {}
+    else:
+        proxy = {
+            "https":read_config_setting("proxy"),
+            "http":read_config_setting("proxy")
+        }
     for i in range(5):
         try:
-            req = session.get("https://apidgp-gameplayer.games.dmm.com/v5/loginurl", timeout=5)
+            req = session.get("https://apidgp-gameplayer.games.dmm.com/v5/loginurl", timeout=5, proxies=proxy)
             break
         except:
             time.sleep(0.5)
@@ -88,7 +96,8 @@ def get_user_cookie(login_id, password):
                 }
                 option.add_experimental_option("prefs", prefs)
                 option.add_experimental_option("excludeSwitches", ["enable-logging"])
-            if read_config_setting("proxy") != 0:
+            if read_config_setting("proxy",print_error=False) != 0:
+                print("Browser will use proxy: "+read_config_setting("proxy"))
                 option.add_argument("--proxy-server="+read_config_setting("proxy"))
             return option
 
@@ -137,7 +146,7 @@ def get_user_cookie(login_id, password):
 
 def get_game_launch_args(game_info,user_cookies,mac_address,hdd_serial,motherboard):
     print("Get game launching arguments...")
-    if read_config_setting("proxy") == 0:
+    if read_config_setting("proxy",print_error=False) == 0:
         proxy = {}
     else:
         proxy = {
