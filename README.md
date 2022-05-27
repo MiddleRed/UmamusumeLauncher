@@ -44,8 +44,11 @@ In `account_info.json`:
 5. If everything fine, you can now boot the game directly by just runing the `launch.py` file.  
 
 Tips: If you don't want to see the python window pops up every time you boot the launcher, rename `launch.py` as `launch.pyw` . But it will cause you cannot get the detailed information when the launcher meets problems.    
-Remember to replace all the `\` character with `/` or `\\` , or the launcher cannot read the json file.
-**Note: The launcher cannot automatically update the game. If there is a game update, you need to download it in DMM Game Player mannually.**  
+
+Remember to replace all the `\` character with `/` or `\\` , or the launcher cannot read the json file.  
+
+**Note: The launcher cannot automatically update the game. If there is a game update, you need to download it in DMM Game Player mannually.**    
+
 The game launched by this program cannot automatically connect to the proxy server, so you may need to use software such as netch or Proxifier to redirect the game network to it.  
 
 ## Config setting
