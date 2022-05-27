@@ -42,7 +42,9 @@ pip install -r requirement.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 5. 如果一切设置妥当，你之后只需要启动 `launch.py` 文件就能启动游戏了 
 
 Tips: 如果你不想每次点开 `launch.py` 都弹出 Python 的窗口，可以将 `launch.py` 重命名为 `launch.pyw`。但这也会导致如果启动过程中出现了问题，你不知道问题是什么。  
-记得将所有 `\` 符号替换为 `/` 或者 `\\` ，否则启动器无法读取 json 文件。  
+
+记得将所有 `\` 符号替换为 `/` 或者 `\\` ，否则启动器无法读取 json 文件。
+
 **注意：启动器无法自动下载游戏更新。你需要手动通过 DMM Game Player 下载安装。**    
  
 ## 如何设置代理
