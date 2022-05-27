@@ -1,5 +1,6 @@
 # UmamusumeLauncher
-English | [中文](README_zh.md)  
+English | [中文](README_zh.md) 
+
 Launching Umamusume Pretty Derby game directly without opening DMM Game Player.  
 Theoretically support all the games that need to be launched by DMM Game Player.
 ## Usage
